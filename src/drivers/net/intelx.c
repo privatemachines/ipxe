@@ -86,17 +86,21 @@ static int intelx_try_fetch_mac ( struct intel_nic *intel, unsigned int ral0,
  */
 static int intelx_fetch_mac ( struct intel_nic *intel, uint8_t *hw_addr ) {
 	int rc;
+	uint32_t i;
 
-	/* Try to fetch address from INTELX_RAL0 */
-	if ( ( rc = intelx_try_fetch_mac ( intel, INTELX_RAL0,
-					   hw_addr ) ) == 0 ) {
-		return 0;
-	}
+	for ( i = 0; i < INTELX_FETCH_MAC_RETRY_ATTEMPTS; i++ ) {
+		/* Try to fetch address from INTELX_RAL0 */
+		if ( ( rc = intelx_try_fetch_mac ( intel, INTELX_RAL0,
+						hw_addr ) ) == 0 ) {
+			return 0;
+		}
 
-	/* Try to fetch address from INTELX_RAL0_ALT */
-	if ( ( rc = intelx_try_fetch_mac ( intel, INTELX_RAL0_ALT,
-					   hw_addr ) ) == 0 ) {
-		return 0;
+		/* Try to fetch address from INTELX_RAL0_ALT */
+		if ( ( rc = intelx_try_fetch_mac ( intel, INTELX_RAL0_ALT,
+						hw_addr ) ) == 0 ) {
+			return 0;
+		}
+		mdelay ( INTELX_FETCH_MAC_RETRY_DELAY_MS );
 	}
 
 	DBGC ( intel, "INTEL %p has no MAC address to use\n", intel );

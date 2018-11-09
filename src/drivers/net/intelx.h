@@ -26,6 +26,12 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 #define INTELX_CTRL_EXT	0x00018UL
 #define INTELX_CTRL_EXT_DRV_LOAD	0x10000000	/**< Driver loaded */
 
+/** Number of times to retry reading MAC address */
+#define INTELX_FETCH_MAC_RETRY_ATTEMPTS 3
+
+/** Time to wait between retry attempts to read MAC address */
+#define INTELX_FETCH_MAC_RETRY_DELAY_MS 20
+
 /** Time to delay for device reset, in milliseconds */
 #define INTELX_RESET_DELAY_MS 20
 
