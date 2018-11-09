@@ -30,7 +30,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 #define INTELX_FETCH_MAC_RETRY_ATTEMPTS 3
 
 /** Time to wait between retry attempts to read MAC address */
-#define INTELX_FETCH_MAC_RETRY_DELAY_MS 20
+#define INTELX_FETCH_MAC_RETRY_DELAY_MS 50
 
 /** Time to delay for device reset, in milliseconds */
 #define INTELX_RESET_DELAY_MS 20
