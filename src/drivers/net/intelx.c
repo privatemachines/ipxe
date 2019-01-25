@@ -805,6 +805,7 @@ static struct pci_device_id intelx_nics[] = {
 	PCI_ROM ( 0x8086, 0x1557, "82599en-sfp", "82599 (Single Port SFI Only)", 0 ),
 	PCI_ROM ( 0x8086, 0x1560, "x540t1", "X540-AT2/X540-BT2 (with single port NVM)", 0 ),
 	PCI_ROM ( 0x8086, 0x1563, "x550t2", "X550-T2", 0 ),
+	PCI_ROM ( 0x8086, 0x15ad, "x552t", "X552/X557-AT", 0),
 	PCI_ROM ( 0x8086, 0x15e5, "x553", "X553", INTELX_X550EM_A | INTELX_SW_LINK_UP ),
 	PCI_ROM ( 0x8086, 0x15c8, "x553t", "X553/X557-AT", 0),
 	PCI_ROM ( 0x8086, 0x15ce, "x553-sfp", "X553 (SFP+)", 0),
