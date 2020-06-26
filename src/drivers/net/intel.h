@@ -1,3 +1,7 @@
+/*
+ * Modified by Rob Taglang for Private Machines on May 11, 2018
+ */
+
 #ifndef _INTEL_H
 #define _INTEL_H
 
